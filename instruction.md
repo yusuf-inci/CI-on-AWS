@@ -17,3 +17,7 @@ maven-central-repo - this account - domain name: - create
 - aws configure
 - export token
 - update setting.xml and pom.xml 
+
+## SonarCloud Setup
+- goto sonarcloud.io - login with your github account - genarete token name: 
+hit + - analyze new project - create a project manually - 
