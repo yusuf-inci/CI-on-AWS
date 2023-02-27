@@ -7,4 +7,13 @@ Region = North Virginia (us-east-1)
 - delete access key you dont need it
 - we need ssh key so create key on your terminal. 
 - Upload SSH public key
-- create SSH Config file   
+- create SSH Config file
+
+## AWS CodeArtifact Setup and AWS System Manager Parameter store
+- CodeArtifact - Create Repository - public upstream: 
+maven-central-repo - this account - domain name: - create 
+- goto maven-central-store - view conn.. - mvn - 
+- create iam user - name: - download credentials
+- aws configure
+- export token
+- update setting.xml and pom.xml 
