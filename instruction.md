@@ -21,3 +21,7 @@ maven-central-repo - this account - domain name: - create
 ## SonarCloud Setup
 - goto sonarcloud.io - login with your github account - genarete token name: 
 hit + - analyze new project - create a project manually - 
+
+## AWS System Manager Parameter Store for Sonar Details
+- goto ssm service on AWS - Parameter store - create parameters -
+- HOST - Organization - Project - token one for sonar one for artifact -
