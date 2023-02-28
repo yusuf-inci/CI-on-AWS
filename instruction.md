@@ -38,13 +38,21 @@ $ git push origin --all
 - check the repo and see the source
 
 ## AWS CodeArtifact Setup and AWS System Manager Parameter store
-- CodeArtifact - Create Repository - public upstream: 
-maven-central-repo - this account - domain name: - create 
+- CodeArtifact - Create Repository - name: vprofile-maven-repo - public upstream: 
+maven-central-repo - this account - domain name: visualpath - create 
 - goto maven-central-store - view conn.. - mvn - 
-- create iam user - name: - download credentials
-- aws configure
-- export token
-- update setting.xml and pom.xml 
+- create iam user - name: vprofile-cart-admin - policy = 
+AWSCodeArtifactAdminAccess - download credentials
+- aws configure with new users credentials 
+- Export a CodeArtifact authorization token for authorization to your repository 
+from your preferred shell.
+- goto local repo and switch to ci-aws
+$ git checkout ci-aws
+- update setting.xml
+update repository url - mirror name - mirror url add / end of the urls 
+- update pom.xml
+update repository url - add / end of the url
+commit the changes and push them 
 
 ## SonarCloud Setup
 - goto sonarcloud.io - login with your github account - genarete token name: 
