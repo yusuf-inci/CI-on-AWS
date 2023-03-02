@@ -50,3 +50,15 @@ $ systemctl stop sonarqube
  $ tar -czvf <give a name (backup-sonarqube.tgz)> sonarqube
 - install awscli
  $ aws s3 cp backup-sonarqube.tgz s3://<your bucket name>
+
+### Tomcat Server (ubuntu)
+- login to Tomcat server via ssh and swicth to root 
+user
+ $ sudo -i
+- install awscli
+- go to /usr/local/tomcat8/conf and copy tomcat-users.xml to s3 bucket
+ $ aws s3 cp tomcat-users.xml s3://<your bucket name>
+- go to /usr/local/tomcat8//webapps/manager/META-INF and copy context.xml to s3 bucket
+ $ aws s3 cp context.xml s3://<your bucket name>
+- check your s3 bucket
+ $ aws s3 ls s3://<your bucket name>
