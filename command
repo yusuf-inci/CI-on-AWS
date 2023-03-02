@@ -31,7 +31,13 @@ $ du -sh * //shows all the directory
  $ apt update && apt install awscli -y
 - copy to s3
 - aws s3 cp backup-jenkins.tar.gz s3://<your bucket name>
-- 
 
-
+### Nexus back up (Amazon Linux)
+- login to Nexus server via ssh and swicth to root user and stop the nexus service
+$ sudo -i
+$ systemctl stop nexus
+- go to /opt
+ $ tar -czvf <give a name (backup-nexus.tgz)> nexus
+- install awscli
+ $ aws s3 cp backup-nexus.tgz s3://<your bucket name>
 
