@@ -41,3 +41,12 @@ $ systemctl stop nexus
 - install awscli
  $ aws s3 cp backup-nexus.tgz s3://<your bucket name>
 
+### SonarQube Server (ubuntu-bionic-18.04)
+- login to SonarQube server via ssh and swicth to root 
+user and stop the nexus service
+$ sudo -i
+$ systemctl stop sonarqube
+- go to /opt
+ $ tar -czvf <give a name (backup-sonarqube.tgz)> sonarqube
+- install awscli
+ $ aws s3 cp backup-sonarqube.tgz s3://<your bucket name>
