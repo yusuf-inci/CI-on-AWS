@@ -62,3 +62,26 @@ user
  $ aws s3 cp context.xml s3://<your bucket name>
 - check your s3 bucket
  $ aws s3 ls s3://<your bucket name>
+
+## Restore Jenkins server manually
+
+- Launch EC2 instance and finish installation steps until first login step on browser
+- login to jenkins via ssh and swicth to root user and stop the jenkins service
+$ sudo -i
+$ systemctl stop jenkins
+- go to /var/lib
+- keep in my ownerships of jenkins directory is jenkins
+- goto AWS console
+- on EC2 Dashboard select your new instance --> Actions --> Instance settings or 
+(Security) --> Modify IAM role --> select the role that you created for S3 bucket and save 
+- back to terminal on new jenkins server
+- install awscli
+- copy the backup files from s3 bucket 
+ $ aws s3 cp s3://<your bucket name>/<backup file name> . //this directory (/var/lib)
+- extract the file it override the current files
+ $ tar xzvf <backup file name>
+- check the permissions if it is not suitable then run below command
+ $ chown jenkins.jenkins jenkins -R
+- start the service
+ $ systemctl start jenkins 
+- login to jenkins with your previous username and password
